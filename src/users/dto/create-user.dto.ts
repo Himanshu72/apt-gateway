@@ -14,6 +14,10 @@ export class CreateUserDto {
   @IsNotEmpty()
   username: string;
 
+  @IsString()
+  @IsNotEmpty()
+  password: string;
+
   @IsDate()
   @Type(() => Date)
   @IsNotEmpty()

@@ -3,6 +3,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { UsersModule } from './users/users.module';
+import { JwtService } from './jwt/jwt.service';
+import { BlockModule } from './block/block.module';
 
 @Module({
   imports: [
@@ -17,8 +19,9 @@ import { UsersModule } from './users/users.module';
       },
     ]),
     UsersModule,
+    BlockModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, JwtService],
 })
 export class AppModule {}
